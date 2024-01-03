@@ -1,17 +1,17 @@
-# Paso 1: Utiliza una imagen de Node.js para construir tu aplicación Angular
-FROM node:latest as build-step
+# Paso 1: Empezar con una imagen de Node.js
+FROM node:16-alpine as build
 
+# Instalar serve
+RUN npm install -g serve
+
+# Establecer el directorio de trabajo
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-COPY . .
 
-# Construye la aplicación
-RUN npm run build
+# Copia los archivos de construcción de Angular al contenedor
+COPY /dist/parqueadero /app
 
-# Paso 2: Utiliza una imagen de nginx para servir la aplicación
-FROM nginx:alpine
-COPY --from=build-step /app/dist/parqueadero /usr/share/nginx/html
+# Expone el puerto que usará serve
+EXPOSE 5000
 
-# Expone el puerto 80
-EXPOSE 80
+# Comando para servir la aplicación usando serve
+CMD ["serve", "-s", "/app", "-p", "5000"]

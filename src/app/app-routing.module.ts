@@ -6,11 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 //Componentes del Cliente
 import { CreateClienteComponent } from './pages/cliente/create-cliente/create-cliente.component';
 
-
-
-
-
-
 //Componentes Home
 import { HomeComponent } from './pages/home/home.component';
 import { ActualizarClienteComponent } from './pages/cliente/actualizar-cliente/actualizar-cliente.component';
