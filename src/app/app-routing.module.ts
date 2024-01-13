@@ -1,4 +1,3 @@
-import { ListarProductoComponent } from './pages/listar-producto/listar-producto.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,11 +9,11 @@ import { CreateClienteComponent } from './pages/cliente/create-cliente/create-cl
 import { HomeComponent } from './pages/home/home.component';
 import { ActualizarClienteComponent } from './pages/cliente/actualizar-cliente/actualizar-cliente.component';
 import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
-import { ProductoComponent } from './pages/producto/producto.component';
-import { ProductoActualizarComponent } from './pages/producto/producto-actualizar/producto-actualizar.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta por defecto
+
   { path: 'home', component: HomeComponent },
  
   //Cliente
@@ -23,14 +22,9 @@ const routes: Routes = [
   { path: 'listar-cliente', component: ListarClienteComponent },
 
 
-//producto
-{path: 'crear-producto',component: ProductoComponent},
-{path: 'listar-producto',component: ListarProductoComponent},
-{ path: 'actualizar-producto/:id', component: ProductoActualizarComponent },
 
 
-  //Home
-  {path: 'home',component: HomeComponent},
+
 ];
 
 @NgModule({

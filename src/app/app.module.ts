@@ -46,10 +46,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker'; // Asegúrat
 import { MatNativeDateModule } from '@angular/material/core';
 import { InicioComponent } from './app/inicio/inicio.component';
 import { ActualizarClienteComponent } from './pages/cliente/actualizar-cliente/actualizar-cliente.component';
-import { ListarProductoComponent } from './pages/listar-producto/listar-producto.component';
 import { ListarClienteComponent } from './pages/cliente/listar-cliente/listar-cliente.component';
-import { ProductoComponent } from './pages/producto/producto.component';
-import { ProductoActualizarComponent } from './pages/producto/producto-actualizar/producto-actualizar.component';
 
 @NgModule({
   declarations: [
@@ -59,11 +56,9 @@ import { ProductoActualizarComponent } from './pages/producto/producto-actualiza
      CabeceraComponent,
      InicioComponent,
      ActualizarClienteComponent,
-     ListarProductoComponent,
      MenuComponent,
      ListarClienteComponent,
-     ProductoComponent,
-     ProductoActualizarComponent,
+    
 
      
   ],
